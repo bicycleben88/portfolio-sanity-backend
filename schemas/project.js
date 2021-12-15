@@ -47,34 +47,32 @@ export default {
       type: "string",
       description: "Youtube Walkthru Video",
     },
-
-    // {
-    //   name: 'technologies',
-    //   title: 'Techonologies',
-    //   type: 'array',
-    //   // kinda like adding another list of fields
-    //   of: [{ type: 'reference', to: [{ type: 'techonology' }] }],
-    // },
+    {
+      name: "technologies",
+      title: "Techonologies",
+      type: "array",
+      // kinda like adding another list of fields
+      of: [{ type: "reference", to: [{ type: "technology" }] }],
+    },
   ],
-  //   preview: {
-  //     select: {
-  //       title: 'name',
-  //       media: 'image',
-  //       topping0: 'toppings.0.name',
-  //       topping1: 'toppings.1.name',
-  //       topping2: 'toppings.2.name',
-  //       topping3: 'toppings.3.name',
-  //     },
-  //     prepare: ({ title, media, ...toppings }) => {
-  //       // filter out undefined toppings
-  //       const tops = Object.values(toppings).filter(Boolean);
-
-  //       // return preview object
-  //       return {
-  //         title,
-  //         media,
-  //         subtitle: tops.join(' '),
-  //       };
-  //     },
-  //   },
+  preview: {
+    select: {
+      title: "name",
+      media: "image",
+      technology0: "technologies.0.name",
+      technology1: "technologies.1.name",
+      technology2: "technologies.2.name",
+      technology3: "technologies.3.name",
+    },
+    prepare: ({ title, media, ...technologies }) => {
+      //filter undefined undefined techs
+      const techs = Object.values(technologies).filter(Boolean);
+      //return preview object
+      return {
+        title,
+        media,
+        subtitle: techs.join(", "),
+      };
+    },
+  },
 };

@@ -13,11 +13,6 @@
   "keywords": [
     "sanity"
   ],
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ]
-  },
   "dependencies": {
     "@sanity/base": "^2.22.3",
     "@sanity/components": "^2.14.0",
