@@ -1,20 +1,20 @@
 import { IoLogoJavascript as icon } from "react-icons/io";
 
 export default {
-  name: "technology", // computer name
-  title: "Technologies", // visible ui title
+  name: "technology",
+  title: "Technologies",
   type: "document",
   icon,
   fields: [
     {
       name: "name",
-      title: "Technology", // visible ui title
+      title: "Technology",
       type: "string",
       description: "What technology are you using?",
     },
     {
       name: "framework",
-      title: "Framework", // visible ui title
+      title: "Framework",
       type: "boolean",
       description: "Is the technology a framework?",
       options: {

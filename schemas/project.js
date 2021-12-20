@@ -1,20 +1,20 @@
 import { MdSentimentVeryDissatisfied as icon } from "react-icons/md";
 
 export default {
-  name: "project", // computer name
-  title: "Project", // visible ui title
+  name: "project",
+  title: "Project",
   type: "document",
   icon,
   fields: [
     {
       name: "name",
-      title: "Project Name", // visible ui title
+      title: "Project Name",
       type: "string",
       description: "The name of the project",
     },
     {
       name: "slug",
-      title: "Slug", // visible ui title
+      title: "Slug",
       type: "slug",
       options: {
         source: "name",
@@ -23,7 +23,7 @@ export default {
     },
     {
       name: "image",
-      title: "Image", // visible ui title
+      title: "Image",
       type: "image",
       options: {
         hotspot: true,
@@ -31,7 +31,7 @@ export default {
     },
     {
       name: "description",
-      title: "Description", // visible ui title
+      title: "Description",
       type: "text",
       description: "High level description of the project",
     },
@@ -47,12 +47,31 @@ export default {
       type: "string",
       description: "Youtube Walkthru Video",
     },
+    // {
+    //   type: "array",
+    //   name: "technologies",
+    //   title: "Technologies",
+    //   of: [
+    //     {
+    //       type: "object",
+    //       fields: [
+    //         {
+    //           name: "technology",
+    //           title: "Technology",
+    //           type: "reference",
+    //           to: [{ type: "technologies" }],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       name: "technologies",
       title: "Techonologies",
       type: "array",
-      // kinda like adding another list of fields
-      of: [{ type: "reference", to: [{ type: "technology" }] }],
+      of: [
+        { type: "reference", name: "technology", to: [{ type: "technology" }] },
+      ],
     },
   ],
   preview: {
@@ -65,9 +84,7 @@ export default {
       technology3: "technologies.3.name",
     },
     prepare: ({ title, media, ...technologies }) => {
-      //filter undefined undefined techs
       const techs = Object.values(technologies).filter(Boolean);
-      //return preview object
       return {
         title,
         media,
