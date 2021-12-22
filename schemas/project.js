@@ -47,24 +47,6 @@ export default {
       type: "string",
       description: "Youtube Walkthru Video",
     },
-    // {
-    //   type: "array",
-    //   name: "technologies",
-    //   title: "Technologies",
-    //   of: [
-    //     {
-    //       type: "object",
-    //       fields: [
-    //         {
-    //           name: "technology",
-    //           title: "Technology",
-    //           type: "reference",
-    //           to: [{ type: "technologies" }],
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
     {
       name: "technologies",
       title: "Techonologies",
