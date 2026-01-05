@@ -1,0 +1,14 @@
+export default {
+  name: "post",
+  title: "Blog Post",
+  type: "document",
+  fields: [
+    { name: "title", title: "Title", type: "string" },
+    { name: "slug", title: "Slug", type: "slug", options: { source: "title" } },
+    {
+      name: "content",
+      title: "Markdown Content",
+      type: "markdown",
+    },
+  ],
+};
