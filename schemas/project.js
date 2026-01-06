@@ -55,6 +55,12 @@ export default {
         { type: "reference", name: "technology", to: [{ type: "technology" }] },
       ],
     },
+    {
+      name: "relatedPost",
+      title: "Related Blog Post",
+      type: "reference",
+      to: [{ type: "post" }],
+    },
   ],
   preview: {
     select: {
